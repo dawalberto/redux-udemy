@@ -5,6 +5,22 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  title = 'redux-app';
+
+  constructor() {
+    this.contador = 10;
+  }
+
+  title:string = 'redux-app';
+  contador:number;
+
+  incrementar():void {
+    this.contador++
+  }
+
+  decrementar():void {
+    this.contador--
+  }
+
 }
