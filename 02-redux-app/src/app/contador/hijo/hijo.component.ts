@@ -22,14 +22,14 @@ export class HijoComponent implements OnInit {
 
   contador:number;
 
-  multiplicar():void {
+  multiplicar(): void {
     // this.contador *= 2;
     // this.cambioContador.emit(this.contador);
     const accion = new MultiplicarAction(9)
     this.store.dispatch(accion)
   }
 
-  dividir():void {
+  dividir(): void {
     // this.contador /= 2;
     // this.cambioContador.emit(this.contador);
     const accion = new DividirAction(2)
