@@ -1,22 +1,25 @@
-import { INCREMENTAR, DECREMENTAR, MULTIPLICAR, DIVIDIR, actions, RESET } from './contador.actions';
+// -- Old School --
+// import { INCREMENTAR, DECREMENTAR, MULTIPLICAR, DIVIDIR, actions, RESET } from './contador.actions';
+// -- New School --
+import * as importsAction from './contador.actions'
 
-export function contadorReducer(state:number = 10, action:actions) {
+export function contadorReducer(state:number = 10, action:importsAction.actions) {
 
   switch(action.type) {
 
-    case INCREMENTAR:
+    case importsAction.INCREMENTAR:
       return state + 1
 
-    case DECREMENTAR:
+    case importsAction.DECREMENTAR:
       return state - 1
 
-    case MULTIPLICAR:
+    case importsAction.MULTIPLICAR:
       return state * action.payload
 
-    case DIVIDIR:
+    case importsAction.DIVIDIR:
       return state / action.payload
 
-    case RESET:
+    case importsAction.RESET:
       return state - state
 
     default:
