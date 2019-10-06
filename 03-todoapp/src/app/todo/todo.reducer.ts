@@ -15,6 +15,18 @@ export function todoReducer(state = estadoInicial, action:fromTodo.Actions): Tod
       const todo = new Todo(action.texto)
       return [...state, todo]
 
+    case fromTodo.TOGGLE_TODO:
+      return state.map(todo => {
+        if (todo.id === action.id) {
+          return {
+            ...todo,
+            completado: !todo.completado
+          }
+        } else {
+          return todo
+        }
+      })
+
     default:
       return state
 
