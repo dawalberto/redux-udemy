@@ -11,6 +11,9 @@ export function todoReducer(state = estadoInicial, action:fromTodo.Actions): Tod
       const todo = new Todo(action.texto)
       return [...state, todo]
 
+    default:
+      return state
+
   }
 
 }
