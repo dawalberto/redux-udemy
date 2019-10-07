@@ -27,6 +27,18 @@ export function todoReducer(state = estadoInicial, action:fromTodo.Actions): Tod
         }
       })
 
+    case fromTodo.EDITAR_TODO:
+      return state.map(todo => {
+        if (todo.id === action.id) {
+          return {
+            ...todo,
+            texto: action.texto
+          }
+        } else {
+          return todo
+        }
+      })
+
     default:
       return state
 
