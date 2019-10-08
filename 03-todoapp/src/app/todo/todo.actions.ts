@@ -1,11 +1,11 @@
 import { Action } from '@ngrx/store';
 
 
-export const AGREGAR_TODO = '[TODO] Agregar todo'
-export const TOGGLE_TODO = '[TODO] Toggle todo'
-export const EDITAR_TODO = '[TODO] Editar todo'
-export const BORRAR_TODO = '[TODO] Borrar todo'
-
+export const AGREGAR_TODO = '[TODO] ✔ Agregar todo'
+export const TOGGLE_TODO = '[TODO] 🔄 Toggle todo'
+export const EDITAR_TODO = '[TODO] ✏ Editar todo'
+export const BORRAR_TODO = '[TODO] ❌ Borrar todo'
+export const TOGGLE_ALL_TODO = '[TODO] 🔄 Toggle all todos'
 
 export class AgregarTodoAction implements Action {
   readonly type = AGREGAR_TODO
@@ -31,7 +31,12 @@ export class BorrarTodoAction implements Action {
   constructor(public id:number) { }
 }
 
+export class ToggleAllTodosAction implements Action {
+  readonly type = TOGGLE_ALL_TODO
+}
+
 export type Actions = AgregarTodoAction |
                       ToggleTodoAction |
                       EditarTodoAction |
-                      BorrarTodoAction
+                      BorrarTodoAction |
+                      ToggleAllTodosAction
