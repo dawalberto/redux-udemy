@@ -39,6 +39,9 @@ export function todoReducer(state = estadoInicial, action:fromTodo.Actions): Tod
         }
       })
 
+    case fromTodo.BORRAR_TODO:
+      return state.filter(todo => todo.id !== action.id)
+
     default:
       return state
 
