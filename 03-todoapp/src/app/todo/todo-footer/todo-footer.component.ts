@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducers';
 import * as fromFilter from '../../filter/filter.actions';
+import * as fromTodo from '../../todo/todo.actions';
 import { Todo } from '../model/todo.model';
 
 @Component({
@@ -36,6 +37,11 @@ export class TodoFooterComponent implements OnInit {
 
   countActives(todos:Todo[]): void {
     this.actives = todos.filter(todo => !todo.completado).length
+  }
+
+  deleteAllTodoCompleted() {
+    const action = new fromTodo.BorrarAllCompletedTodoAction()
+    this.store.dispatch(action)
   }
 
 }
