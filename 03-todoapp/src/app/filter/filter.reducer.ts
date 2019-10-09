@@ -1,7 +1,7 @@
 import * as fromFilter from './filter.actions'
 
 
-const estadoInicial:fromFilter.filtrosValidos = 'todos'
+const estadoInicial:fromFilter.filtrosValidos = 'All'
 
 
 export function filterReducer(state = estadoInicial, action:fromFilter.actions): fromFilter.filtrosValidos {

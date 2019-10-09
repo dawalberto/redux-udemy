@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 
 export const SET_FILTER = '[Filter] ✔ Set filter'
-export type filtrosValidos = 'todos' | 'completados' | 'pendientes'
+export type filtrosValidos = 'All' | 'Active' | 'Completed'
 
 
 export class SetFilterAction implements Action {
